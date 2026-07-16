@@ -92,17 +92,22 @@ La aplicación es instalable como PWA (Progressive Web App) en dispositivos móv
 ### Build
 
 ```bash
-# Desde el directorio del frontend
+# Default: apunta a https://api-estadistico.dgcloudops.com/api/v1
 docker build -t estadistico-frontend .
-```
 
-Build con API base URL personalizada (opcional):
-
-```bash
+# Custom API URL (opcional)
 docker build \
-  --build-arg VITE_API_BASE_URL=/api/v1 \
+  --build-arg VITE_API_BASE_URL=https://tu-api.com/api/v1 \
   -t estadistico-frontend .
 ```
+
+> El frontend llama a la API directamente vía CORS. No hay proxy nginx. El backend ya tiene `cors()` habilitado.
+
+### Variables de entorno
+
+| Variable | Build-time | Default | Descripción |
+|----------|-----------|---------|-------------|
+| `VITE_API_BASE_URL` | `--build-arg` | `https://api-estadistico.dgcloudops.com/api/v1` | URL completa de la API backend |
 
 ### Ejecutar
 
@@ -112,15 +117,6 @@ docker run -d \
   -p 3000:80 \
   estadistico-frontend
 ```
-
-Esto sirve el frontend en `http://localhost:3000`. Las peticiones a `/api/` se redirigen al **backend en `localhost:3001`** dentro del contenedor (ajustar `proxy_pass` en `nginx.conf` si el backend está en otra IP/host).
-
-### Variables de entorno
-
-| Variable | Runtime | Default | Descripción |
-|----------|---------|---------|-------------|
-| `BACKEND_URL` | `-e` | `https://api-estadistico.dgcloudops.com` | URL base del backend (sin `/api/v1`) |
-| `VITE_API_BASE_URL` | `--build-arg` | `/api/v1` | Base path de la API (solo para build) |
 
 ### Ejemplo para correr apuntando al backend en el VPS
 
