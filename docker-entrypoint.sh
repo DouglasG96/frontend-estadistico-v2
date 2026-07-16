@@ -1,14 +1,16 @@
 #!/bin/sh
 set -e
 
-# Sustituir variables de entorno en nginx.conf
 # BACKEND_URL default: https://api-estadistico.dgcloudops.com
 # (el backend ya expuesto en esa URL)
-export BACKEND_URL="${BACKEND_URL:-https://api-estadistico.dgcloudops.com}"
+BACKEND_URL="${BACKEND_URL:-https://api-estadistico.dgcloudops.com}"
+export BACKEND_URL
 
-# Reemplazar ${BACKEND_URL} en la config template
-envsubst '${BACKEND_URL}' < /etc/nginx/conf.d/default.conf > /tmp/nginx.conf
-mv /tmp/nginx.conf /etc/nginx/conf.d/default.conf
+# Generar nginx.conf desde template con envsubst
+envsubst '${BACKEND_URL}' < /etc/nginx/templates/default.conf.template > /etc/nginx/conf.d/default.conf
 
-# Iniciar nginx
-exec nginx -g "daemon off;"
+# Asegurar permisos para nginx user
+chown -R nginx:nginx /var/cache/nginx /var/run /etc/nginx/conf.d
+
+# Iniciar nginx como non-root
+exec dumb-init -- su -s /bin/sh nginx -c "nginx -g 'daemon off;'"
