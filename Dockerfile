@@ -26,13 +26,17 @@ RUN npm run build
 FROM nginx:1.27-alpine AS runner
 
 # Seguridad: quitar paquetes innecesarios
-RUN apk add --no-cache dumb-init && \
+RUN apk add --no-cache dumb-init gettext && \
     rm -rf /var/cache/apk/*
 
 # Remover config por defecto
 RUN rm -f /etc/nginx/conf.d/default.conf
 
-# Copiar config personalizada
+# Copiar entrypoint script
+COPY docker-entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+
+# Copiar config personalizada (template con ${BACKEND_URL})
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Copiar los assets compilados desde el builder

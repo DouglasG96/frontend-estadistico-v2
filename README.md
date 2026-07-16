@@ -117,11 +117,22 @@ Esto sirve el frontend en `http://localhost:3000`. Las peticiones a `/api/` se r
 
 ### Variables de entorno
 
-| Variable | Build-time | Valor por defecto | Descripción |
-|----------|-----------|-------------------|-------------|
-| `VITE_API_BASE_URL` | `--build-arg` | `/api/v1` | Base path de la API |
+| Variable | Runtime | Default | Descripción |
+|----------|---------|---------|-------------|
+| `BACKEND_URL` | `-e` | `https://api-estadistico.dgcloudops.com` | URL base del backend (sin `/api/v1`) |
+| `VITE_API_BASE_URL` | `--build-arg` | `/api/v1` | Base path de la API (solo para build) |
 
-Para cambiar dónde apunta el proxy de la API, editar `nginx.conf` (línea `proxy_pass http://localhost:3001;`) antes del build.
+### Ejemplo para correr apuntando al backend en el VPS
+
+```bash
+docker run -d \
+  --name estadistico-frontend \
+  -p 3000:80 \
+  -e BACKEND_URL=https://api-estadistico.dgcloudops.com \
+  estadistico-frontend
+```
+
+> El nginx dentro del contenedor recibe `BACKEND_URL` en runtime y la sustituye en el `proxy_pass`. Así el frontend en cualquier lado puede apuntar a la API en el VPS.
 
 ### Desarrollo local
 
