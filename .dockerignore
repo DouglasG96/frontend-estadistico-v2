@@ -1,0 +1,13 @@
+node_modules
+dist
+.git
+.gitignore
+*.md
+test-results
+e2e
+.env
+.env.local
+*.local
+.DS_Store
+coverage
+.vite

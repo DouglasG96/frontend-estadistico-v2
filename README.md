@@ -87,6 +87,50 @@ El frontend consume la API del backend en `/api/v1/`:
 
 La aplicación es instalable como PWA (Progressive Web App) en dispositivos móviles y de escritorio. Service worker generado automáticamente por `vite-plugin-pwa`.
 
+## Docker
+
+### Build
+
+```bash
+# Desde el directorio del frontend
+docker build -t estadistico-frontend .
+```
+
+Build con API base URL personalizada (opcional):
+
+```bash
+docker build \
+  --build-arg VITE_API_BASE_URL=/api/v1 \
+  -t estadistico-frontend .
+```
+
+### Ejecutar
+
+```bash
+docker run -d \
+  --name estadistico-frontend \
+  -p 3000:80 \
+  estadistico-frontend
+```
+
+Esto sirve el frontend en `http://localhost:3000`. Las peticiones a `/api/` se redirigen al **backend en `localhost:3001`** dentro del contenedor (ajustar `proxy_pass` en `nginx.conf` si el backend está en otra IP/host).
+
+### Variables de entorno
+
+| Variable | Build-time | Valor por defecto | Descripción |
+|----------|-----------|-------------------|-------------|
+| `VITE_API_BASE_URL` | `--build-arg` | `/api/v1` | Base path de la API |
+
+Para cambiar dónde apunta el proxy de la API, editar `nginx.conf` (línea `proxy_pass http://localhost:3001;`) antes del build.
+
+### Desarrollo local
+
+```bash
+cd frontend-estadistico-v2
+npm install
+npm run dev
+```
+
 ## Despliegue
 
 ```bash
