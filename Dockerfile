@@ -22,7 +22,8 @@ RUN npm run build
 FROM nginx:1.27-alpine AS runner
 
 # Instalar herramientas necesarias
-RUN apk add --no-cache dumb-init gettext && \
+RUN apk add --no-cache dumb-init gettext ca-certificates && \
+    update-ca-certificates && \
     rm -rf /var/cache/apk/*
 
 # Remover config default
