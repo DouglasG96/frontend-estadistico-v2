@@ -1,0 +1,5 @@
+# React + Vite + Vitest
+node_modules/
+dist/
+*.local
+.env
