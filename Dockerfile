@@ -30,6 +30,7 @@ RUN rm -f /etc/nginx/conf.d/default.conf
 
 # Copiar entrypoint y config template
 COPY docker-entrypoint.sh /docker-entrypoint.sh
+RUN chmod +x /docker-entrypoint.sh
 COPY nginx.conf /etc/nginx/templates/default.conf.template
 
 # Copiar assets compilados
