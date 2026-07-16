@@ -49,15 +49,9 @@ npm run test:watch  # Modo watch
 
 ## Usuarios
 
-| Usuario | Contraseña | Rol |
-|---------|-----------|-----|
-| alex.tochez | Iglesia2024! | Administrador |
-| luis.romero | Iglesia2024! | Administrador |
-| douglas.guzman | Iglesia2024! | Administrador |
-| andrea.joma | Iglesia2024! | Administrador |
-| jeremy.galdamez | Iglesia2024! | Administrador |
-| kevi.onan | Iglesia2024! | Administrador |
-| kevin.ayala | Iglesia2024! | Administrador |
+Los usuarios se crean directamente en la base de datos MongoDB Atlas. Contacta al administrador para obtener credenciales de acceso.
+
+> **Nota de seguridad:** Por política del proyecto, no se incluyen credenciales en el repositorio. Las contraseñas se distribuyen por canales seguros fuera de banda.
 
 ## Reportes disponibles
 
