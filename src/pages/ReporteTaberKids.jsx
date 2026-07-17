@@ -141,7 +141,7 @@ export default function ReporteTaberKids() {
             <option value="dia">Día</option>
             <option value="semana">Semana</option>
             <option value="mes">Mes</option>
-            <option value="año">Año</option>
+            <option value="año">{'A\u00f1o'}</option>
           </select>
         </div>
         <div>

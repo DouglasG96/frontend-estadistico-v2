@@ -135,7 +135,7 @@ export default function ReporteServidores() {
             <option value="dia">Día</option>
             <option value="semana">Semana</option>
             <option value="mes">Mes</option>
-            <option value="año">Año</option>
+            <option value="año">{'A\u00f1o'}</option>
           </select>
         </div>
         <button onClick={fetchData} disabled={loading} className="px-4 py-2 rounded-lg text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 disabled:opacity-50 transition-colors flex items-center gap-2">

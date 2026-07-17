@@ -233,7 +233,7 @@ export default function ReporteComparativo() {
               className="px-3 py-2 rounded-lg border text-sm outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500"
               style={{ backgroundColor: 'var(--color-surface)', borderColor: 'var(--color-border)', color: 'var(--color-text)' }}
             >
-              <option value="">Seleccionar año</option>
+              <option value="">{'Seleccionar a\u00f1o'}</option>
               {anios.map((a) => (
                 <option key={a} value={a}>{a}</option>
               ))}
@@ -399,7 +399,7 @@ export default function ReporteComparativo() {
 
       {!loading && !error && data.length === 0 && year && (
         <div className="text-center py-12 rounded-xl border" style={{ backgroundColor: 'var(--color-surface)', borderColor: 'var(--color-border)' }}>
-          <p style={{ color: 'var(--color-text-secondary)' }}>No hay datos disponibles para el año seleccionado</p>
+          <p style={{ color: 'var(--color-text-secondary)' }}>{'No hay datos disponibles para el a\u00f1o seleccionado'}</p>
         </div>
       )}
     </div>
