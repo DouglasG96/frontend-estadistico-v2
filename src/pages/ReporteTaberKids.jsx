@@ -149,7 +149,7 @@ export default function ReporteTaberKids() {
           <select value={tipo} onChange={(e) => setTipo(e.target.value)} className="px-3 py-2 rounded-lg border text-sm outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500" style={{ backgroundColor: 'var(--color-surface)', borderColor: 'var(--color-border)', color: 'var(--color-text)' }}>
             <option value="ambos">Ambos</option>
             <option value="maestros">Maestros</option>
-            <option value="ninos">Ninos</option>
+            <option value="ninos">Niños</option>
           </select>
         </div>
         <button onClick={fetchData} disabled={loading} className="px-4 py-2 rounded-lg text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 disabled:opacity-50 transition-colors flex items-center gap-2">
