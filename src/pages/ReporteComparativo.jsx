@@ -226,14 +226,14 @@ export default function ReporteComparativo() {
       <div className="p-4 rounded-xl border space-y-4" style={{ backgroundColor: 'var(--color-surface)', borderColor: 'var(--color-border)' }}>
         <div className="flex flex-wrap items-end gap-4">
           <div>
-            <label className="block text-xs font-medium mb-1" style={{ color: 'var(--color-text-secondary)' }}>Ano</label>
+            <label className="block text-xs font-medium mb-1" style={{ color: 'var(--color-text-secondary)' }}>Año</label>
             <select
               value={year}
               onChange={(e) => setYear(e.target.value)}
               className="px-3 py-2 rounded-lg border text-sm outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500"
               style={{ backgroundColor: 'var(--color-surface)', borderColor: 'var(--color-border)', color: 'var(--color-text)' }}
             >
-              <option value="">Seleccionar ano</option>
+              <option value="">Seleccionar año</option>
               {anios.map((a) => (
                 <option key={a} value={a}>{a}</option>
               ))}
@@ -258,7 +258,7 @@ export default function ReporteComparativo() {
 
         {/* Metricas checkboxes */}
         <div>
-          <label className="block text-xs font-medium mb-2" style={{ color: 'var(--color-text-secondary)' }}>Metricas</label>
+          <label className="block text-xs font-medium mb-2" style={{ color: 'var(--color-text-secondary)' }}>Métricas</label>
           <div className="flex flex-wrap items-center gap-3">
             <button
               onClick={selectAllMetricas}
@@ -399,7 +399,7 @@ export default function ReporteComparativo() {
 
       {!loading && !error && data.length === 0 && year && (
         <div className="text-center py-12 rounded-xl border" style={{ backgroundColor: 'var(--color-surface)', borderColor: 'var(--color-border)' }}>
-          <p style={{ color: 'var(--color-text-secondary)' }}>No hay datos disponibles para el ano seleccionado</p>
+          <p style={{ color: 'var(--color-text-secondary)' }}>No hay datos disponibles para el año seleccionado</p>
         </div>
       )}
     </div>

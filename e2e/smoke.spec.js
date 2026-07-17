@@ -13,7 +13,7 @@ async function login(page) {
   await expect(page.getByText(/Bienvenido/)).toBeVisible();
 }
 
-test.describe('Sistema Estadístico TBBCentral - Smoke Tests', () => {
+test.describe('Sistema Estadístico Taber Central - Smoke Tests', () => {
   test('1. Login page loads', async ({ page }) => {
     await page.goto(BASE_URL);
     await expect(page.getByRole('heading', { name: 'Iniciar Sesión' })).toBeVisible();

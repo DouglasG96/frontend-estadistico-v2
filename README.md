@@ -1,4 +1,4 @@
-# Frontend Estadístico V2 — TBBCentral
+# Frontend Estadístico V2 — Taber Central
 
 Sistema de reportes estadísticos para la Iglesia **Tabernáculo Bíblico Bautista "Amigos de Israel" Central**.
 

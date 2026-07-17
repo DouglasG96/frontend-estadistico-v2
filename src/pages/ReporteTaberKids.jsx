@@ -138,10 +138,10 @@ export default function ReporteTaberKids() {
         <div>
           <label className="block text-xs font-medium mb-1" style={{ color: 'var(--color-text-secondary)' }}>Agrupar por</label>
           <select value={agrupar} onChange={(e) => setAgrupar(e.target.value)} className="px-3 py-2 rounded-lg border text-sm outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500" style={{ backgroundColor: 'var(--color-surface)', borderColor: 'var(--color-border)', color: 'var(--color-text)' }}>
-            <option value="dia">Dia</option>
+            <option value="dia">Día</option>
             <option value="semana">Semana</option>
             <option value="mes">Mes</option>
-            <option value="ano">Ano</option>
+            <option value="año">Año</option>
           </select>
         </div>
         <div>

@@ -62,7 +62,7 @@ export default function Layout({ children }) {
             <Church className="w-5 h-5 text-white" />
           </div>
           <div className="flex-1 min-w-0">
-            <h1 className="text-sm font-semibold text-white truncate">TBBCentral</h1>
+            <h1 className="text-sm font-semibold text-white truncate">Taber Central</h1>
             <p className="text-xs text-slate-400 truncate">Sistema Estadístico</p>
           </div>
           <button
@@ -135,7 +135,7 @@ export default function Layout({ children }) {
             className="hidden sm:block text-base font-semibold"
             style={{ color: 'var(--color-text)' }}
           >
-            Estadístico TBBCentral
+            Estadístico Taber Central
           </h2>
 
           <div className="flex-1" />

@@ -11,9 +11,9 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg'],
       manifest: {
-        name: 'Sistema Estadístico TBBCentral',
-        short_name: 'Estadístico TBB',
-        description: 'Sistema de reportes estadísticos para la Iglesia TBBCentral',
+        name: 'Sistema Estadístico Taber Central',
+        short_name: 'Estadístico T Central',
+        description: 'Sistema de reportes estadísticos para la Iglesia Taber Central',
         theme_color: '#1e40af',
         background_color: '#ffffff',
         display: 'standalone',

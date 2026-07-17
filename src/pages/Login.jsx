@@ -46,7 +46,7 @@ export default function Login() {
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/15 mb-4">
             <Church className="w-8 h-8 text-white" />
           </div>
-          <h1 className="text-xl font-bold text-white">TBBCentral</h1>
+          <h1 className="text-xl font-bold text-white">Taber Central</h1>
           <p className="text-blue-100 text-sm mt-1">Sistema Estadístico</p>
         </div>
 

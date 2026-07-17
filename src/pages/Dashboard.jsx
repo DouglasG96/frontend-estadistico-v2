@@ -65,7 +65,7 @@ export default function Dashboard() {
           Bienvenido, {user?.nombreCompleto || user?.usuario || 'Usuario'}
         </h1>
         <p className="mt-1" style={{ color: 'var(--color-text-secondary)' }}>
-          Sistema de Reportes Estadísticos - Iglesia TBBCentral
+          Sistema de Reportes Estadísticos - Iglesia Taber Central
         </p>
       </div>
 
